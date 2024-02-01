@@ -1,16 +1,16 @@
-﻿using DesafioAutoGlass.Domain.Enum;
+﻿using DesafioAutoGlass.Domain.Entities;
 using System;
 
-namespace DesafioAutoGlass.Domain.Entities
+namespace DesafioAutoGlass.Application.Dtos
 {
-    public class Product
+    public class ProductDto
     {
         public int Id { get; set; }
         public string Description { get; set; }
-        public StatusEnum Status { get; set; }
+        public string StatusProduct { get; set; }
         public DateTime ManufacturingDate { get; set; }
         public DateTime ExpirationDate { get; set; }
         public int SupplierId { get; set; }
-        public Supplier Supplier { get; set; }
+        public string SupplierName { get; set; }
     }
 }
