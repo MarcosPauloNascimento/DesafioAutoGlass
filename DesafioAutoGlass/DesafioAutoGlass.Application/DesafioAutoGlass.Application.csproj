@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DesafioAutoGlass.Domain.Core\DesafioAutoGlass.Domain.Core.csproj" />
-    <ProjectReference Include="..\DesafioAutoGlass.Infrastructure\DesafioAutoGlass.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
