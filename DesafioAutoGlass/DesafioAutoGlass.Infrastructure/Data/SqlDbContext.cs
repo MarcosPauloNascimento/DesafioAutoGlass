@@ -1,11 +1,17 @@
-﻿using DesafioAutoGlass.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using DesafioAutoGlass.Domain.Entities;
 using System;
+using DesafioAutoGlass.Infrastructure.Data.Mappings;
 
 namespace DesafioAutoGlass.Infrastructure.Data
 {
-    public class SqlDbContext : DbContext
+    public class SqlDbContext: DbContext
     {
+
+        public SqlDbContext()
+        {
+
+        }
         public SqlDbContext(DbContextOptions<SqlDbContext> options) : base(options)
         {
             Database.Migrate();
@@ -32,8 +38,8 @@ namespace DesafioAutoGlass.Infrastructure.Data
                     new Product { Id = 1, Description = "Parachoque Gol G4", Status = true, ManufacturingDate = DateTime.UtcNow.AddYears(-1), SupplierId = 1 }
                 );
 
-            base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(SqlDbContext).Assembly);
+            
         }
 
     }

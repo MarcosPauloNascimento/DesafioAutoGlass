@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DevIO.Data.Mappings
+namespace DesafioAutoGlass.Infrastructure.Data.Mappings
 {
     public class SupplierMapping : IEntityTypeConfiguration<Supplier>
     {
