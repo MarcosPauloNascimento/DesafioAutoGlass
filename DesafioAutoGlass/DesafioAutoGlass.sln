@@ -11,8 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{42ECA4F4-8AC9-421D-A4CF-6110317043B3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{7121840D-836E-484D-974C-15B45E79ABD9}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioAutoGlass.Application", "DesafioAutoGlass.Application\DesafioAutoGlass.Application.csproj", "{A3C9AEBA-72C9-4620-B6A4-0F4ACDE7332F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioAutoGlass.Domain", "DesafioAutoGlass.Domain\DesafioAutoGlass.Domain.csproj", "{08BA9404-1885-42C4-A5D1-0D78E97413E4}"
