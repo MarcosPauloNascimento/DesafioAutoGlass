@@ -6,6 +6,7 @@ using DesafioAutoGlass.Domain.Core.Interfaces.Services;
 using DesafioAutoGlass.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace DesafioAutoGlass.Application.Services
@@ -16,8 +17,8 @@ namespace DesafioAutoGlass.Application.Services
         private readonly ISupplierService _supplierService;
         private readonly IProductService _productService;
 
-        public ApplicationSupplierServices(IMapper mapper, 
-            ISupplierService supplierService, 
+        public ApplicationSupplierServices(IMapper mapper,
+            ISupplierService supplierService,
             INotifier notifier,
             IProductService productService)
             : base(notifier)
@@ -71,7 +72,18 @@ namespace DesafioAutoGlass.Application.Services
             {
                 var supplier = _mapper.Map<Supplier>(supplierDto);
                 _supplierService.Detach(supplier);
-                await _supplierService.Delete(supplier);
+
+                var product = await _productService.GetProductsBySupplierId(supplier.Id);
+
+                if (product.Any())
+                {
+                    Notify($"Existem produtos cadastrados para esse fornecedor. Não será possivel remover");
+                }
+                else
+                {
+                    await _supplierService.Delete(supplier);
+                }
+
             }
             catch (Exception e)
             {

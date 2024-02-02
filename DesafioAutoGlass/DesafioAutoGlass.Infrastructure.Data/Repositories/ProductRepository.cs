@@ -16,7 +16,7 @@ namespace DesafioAutoGlass.Infrastructure.Data.Repositories
         public async Task<Product> GetProduct(int id)
         {
             return await _context.Products.AsNoTracking().Include(f => f.Supplier)
-                .FirstOrDefaultAsync(p => p.SupplierId == id);
+                .FirstOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task<IEnumerable<Product>> GetProducts()
