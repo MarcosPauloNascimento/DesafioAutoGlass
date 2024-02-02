@@ -1,5 +1,5 @@
-﻿using DesafioAutoGlass.Application;
-using DesafioAutoGlass.Application.Interfaces;
+﻿using DesafioAutoGlass.Application.Interfaces;
+using DesafioAutoGlass.Application.Services;
 using DesafioAutoGlass.Domain.Core.Interfaces.Repositories;
 using DesafioAutoGlass.Domain.Core.Interfaces.Services;
 using DesafioAutoGlass.Domain.Core.Notifications;

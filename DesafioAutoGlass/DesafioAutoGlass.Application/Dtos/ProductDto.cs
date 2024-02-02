@@ -7,7 +7,7 @@ namespace DesafioAutoGlass.Application.Dtos
     {
         public int Id { get; set; }
         public string Description { get; set; }
-        public string StatusProduct { get; set; }
+        public bool Status { get; set; }
         public DateTime ManufacturingDate { get; set; }
         public DateTime ExpirationDate { get; set; }
         public int SupplierId { get; set; }

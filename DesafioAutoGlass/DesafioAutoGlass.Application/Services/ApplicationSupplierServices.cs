@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DesafioAutoGlass.Application
+namespace DesafioAutoGlass.Application.Services
 {
     public class ApplicationSupplierServices : ServiceBase, IApplicationSupplierServices
     {
@@ -22,22 +22,22 @@ namespace DesafioAutoGlass.Application
             _supplierService = supplierService;
         }
 
-        public async Task<int?> Add(SupplierDto supplierDto)
+        public async Task<bool> Add(SupplierDto supplierDto)
         {
             try
             {
                 var supplier = _mapper.Map<Supplier>(supplierDto);
 
                 if (!ExecuteValidation(new SupplierValidations(), supplier))
-                    return null;
+                    return false;
 
                 await _supplierService.Add(supplier);
-                return supplier.Id;
+                return true;
             }
             catch (Exception e)
             {
                 Notify($"Erro ao tentar adicionar o fornecedor | {e.InnerException.Message}");
-                return null;
+                return false;
             }
         }
 
@@ -84,6 +84,6 @@ namespace DesafioAutoGlass.Application
         {
             var supllier = await _supplierService.Get(id);
             return _mapper.Map<SupplierDto>(supllier);
-        }        
+        }
     }
 }

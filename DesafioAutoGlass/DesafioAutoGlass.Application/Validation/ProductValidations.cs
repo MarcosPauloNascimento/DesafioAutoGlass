@@ -9,15 +9,15 @@ namespace DesafioAutoGlass.Application.Validations
         public ProductValidations()
         {
             RuleFor(u => u.Description)
-                    .NotEmpty().WithMessage("O campo {PropertyName} é obrigatório")
+                    .NotNull().WithMessage("O campo descrição do produto deve ser preenchido")
                     .Length(2, 200)
-                    .WithMessage("O campo {PropertyName} precisa ter entre {MinLength} e {MaxLength} caracteres");
+                    .WithMessage("O campo descrição do produto precisa ter entre {MinLength} e {MaxLength} caracteres");
 
             RuleFor(u => u.Status)
                     .NotNull().WithMessage("O campo {PropertyName} é obrigatório");
 
             RuleFor(u => u.ManufacturingDate)
-                    .LessThan(p => DateTime.Now)
+                    .LessThan(p => DateTime.UtcNow)
                     .WithMessage("A data de fabricação não pode ser maior do que hoje");
 
             RuleFor(u => u.ExpirationDate)

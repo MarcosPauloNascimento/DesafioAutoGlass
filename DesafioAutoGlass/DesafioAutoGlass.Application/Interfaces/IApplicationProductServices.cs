@@ -6,7 +6,7 @@ namespace DesafioAutoGlass.Application.Interfaces
 {
     public interface IApplicationProductServices
     {
-        Task<int?> Add(ProductDto userDto);
+        Task<bool> Add(ProductDto userDto);
 
         Task<bool> Update(ProductDto userDto);
 
@@ -15,5 +15,6 @@ namespace DesafioAutoGlass.Application.Interfaces
         Task<ProductDto> GetById(int id);
 
         Task<IEnumerable<ProductDto>> GetAll();
+
     }
 }

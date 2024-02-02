@@ -8,13 +8,14 @@ namespace DesafioAutoGlass.Application.Validations
         public SupplierValidations()
         {
             RuleFor(u => u.Description)
-                    .NotEmpty().WithMessage("O campo descricao do fornecedor é obrigatório")
+                    .NotNull().WithMessage("O campo descrição do fornecedor deve ser preenchido")
                     .Length(2, 200)
-                    .WithMessage("O campo {PropertyName} precisa ter entre {MinLength} e {MaxLength} caracteres");
+                    .WithMessage("O campo descrição do fornecedor precisa ter entre {MinLength} e {MaxLength} caracteres");
 
             RuleFor(u => u.CNPJ)
-                    .NotNull().WithMessage("O campo {PropertyName} é obrigatório")
-                    .Length(14);
+                    .NotNull().WithMessage("O campo {PropertyName} deve ser preenchido")
+                    .Length(14)
+                    .WithMessage("O campo {PropertyName} deve conter 14 números");
 
         }
     }

@@ -1,5 +1,4 @@
-﻿using DesafioAutoGlass.Domain.Entities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace DesafioAutoGlass.Application.Dtos
 {
@@ -8,6 +7,6 @@ namespace DesafioAutoGlass.Application.Dtos
         public int Id { get; set; }
         public string Description { get; set; }
         public string CNPJ { get; set; }
-        public List<Product> Products { get; set; }
+        public List<ProductDto> Products { get; set; }
     }
 }

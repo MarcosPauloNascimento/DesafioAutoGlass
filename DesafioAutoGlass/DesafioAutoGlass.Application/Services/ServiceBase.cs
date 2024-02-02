@@ -3,7 +3,7 @@ using DesafioAutoGlass.Domain.Core.Notifications;
 using FluentValidation;
 using FluentValidation.Results;
 
-namespace DesafioAutoGlass.Application
+namespace DesafioAutoGlass.Application.Services
 {
     public abstract class ServiceBase
     {

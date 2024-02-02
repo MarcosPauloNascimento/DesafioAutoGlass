@@ -1,8 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using DesafioAutoGlass.Domain.Entities;
+﻿using DesafioAutoGlass.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
-using DesafioAutoGlass.Infrastructure.Data.Mappings;
-using DesafioAutoGlass.Domain.Enum;
 
 namespace DesafioAutoGlass.Infrastructure.Data
 {
@@ -36,7 +34,7 @@ namespace DesafioAutoGlass.Infrastructure.Data
 
             modelBuilder.Entity<Product>()
                 .HasData(
-                    new Product { Id = 1, Description = "Parachoque Gol G4", Status = StatusEnum.Ativo, ManufacturingDate = DateTime.UtcNow.AddYears(-1), SupplierId = 1 }
+                    new Product { Id = 1, Description = "Parachoque Gol G4", Status = true, ManufacturingDate = DateTime.UtcNow.AddYears(-1), SupplierId = 1 }
                 );
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(SqlDbContext).Assembly);

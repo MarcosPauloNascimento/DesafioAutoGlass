@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DesafioAutoGlass.Application
+namespace DesafioAutoGlass.Application.Services
 {
     public class ApplicationProductServices : ServiceBase, IApplicationProductServices
     {
@@ -20,24 +20,24 @@ namespace DesafioAutoGlass.Application
         {
             _mapper = mapper;
             _productService = productService;
-        }
+        }        
 
-        public async Task<int?> Add(ProductDto productDto)
+        public async Task<bool> Add(ProductDto productDto)
         {
             try
             {
-                var product = _mapper.Map<Product>(productDto);
+                var product = _mapper.Map<ProductDto, Product>(productDto);
 
                 if (!ExecuteValidation(new ProductValidations(), product))
-                    return null;
+                    return false;
 
                 await _productService.Add(product);
-                return product.Id;
+                return true;
             }
             catch (Exception e)
             {
                 Notify($"Erro ao tentar adicionar o produto | {e.InnerException.Message}");
-                return null;
+                return false;
             }
         }
 
@@ -84,6 +84,6 @@ namespace DesafioAutoGlass.Application
         {
             var product = await _productService.Get(id);
             return _mapper.Map<ProductDto>(product);
-        }        
+        }
     }
 }

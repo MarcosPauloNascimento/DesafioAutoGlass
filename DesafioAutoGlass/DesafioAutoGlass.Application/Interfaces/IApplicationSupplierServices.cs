@@ -6,7 +6,7 @@ namespace DesafioAutoGlass.Application.Interfaces
 {
     public interface IApplicationSupplierServices
     {
-        Task<int?> Add(SupplierDto supplierDto);
+        Task<bool> Add(SupplierDto supplierDto);
 
         Task<bool> Update(SupplierDto supplierDto);
 
