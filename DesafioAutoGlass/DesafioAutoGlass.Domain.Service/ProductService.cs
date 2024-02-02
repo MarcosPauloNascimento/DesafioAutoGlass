@@ -25,17 +25,22 @@ namespace DesafioAutoGlass.Domain.Service
 
         public async Task Delete(Product domain)
         {
-            await _productRepository.Delete(domain);
+            await _productRepository.Update(domain);
+        }
+
+        public async Task<IEnumerable<Product>> GetProductsBySupplierId(int id)
+        {
+            return await _productRepository.GetProductsBySupplierId(id);
         }
 
         public async Task<Product> Get(int id)
         {
-            return await _productRepository.Get(id);
+            return await _productRepository.GetProduct(id);
         }
 
-        public async Task<IEnumerable<Product>> GetAll()
+        public async Task<IEnumerable<Product>> GetAll(string filter)
         {
-            return await _productRepository.GetAll();
+            return await _productRepository.GetProducts(filter);
         }
 
         public void Detach(Product domain)

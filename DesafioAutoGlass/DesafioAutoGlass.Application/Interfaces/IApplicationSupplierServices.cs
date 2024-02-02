@@ -14,6 +14,8 @@ namespace DesafioAutoGlass.Application.Interfaces
 
         Task<SupplierDto> GetById(int id);
 
+        Task<IEnumerable<ProductDto>> GetProductsBySuplierId(int id);
+
         Task<IEnumerable<SupplierDto>> GetAll();
     }
 }

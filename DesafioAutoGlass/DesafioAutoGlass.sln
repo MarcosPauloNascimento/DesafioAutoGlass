@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioAutoGlass.Infrastruc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioAutoGlass.Infrastructure.Data", "DesafioAutoGlass.Infrastructure.Data\DesafioAutoGlass.Infrastructure.Data.csproj", "{D67A1400-CE08-4A0E-A416-572A6ED2BCEA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioAutoGlass.Web.Api", "DesafioAutoGlass.Web.Api\DesafioAutoGlass.Web.Api.csproj", "{7ECD81C1-E988-4186-830C-94BB6E259869}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{D67A1400-CE08-4A0E-A416-572A6ED2BCEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D67A1400-CE08-4A0E-A416-572A6ED2BCEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D67A1400-CE08-4A0E-A416-572A6ED2BCEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ECD81C1-E988-4186-830C-94BB6E259869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ECD81C1-E988-4186-830C-94BB6E259869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ECD81C1-E988-4186-830C-94BB6E259869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ECD81C1-E988-4186-830C-94BB6E259869}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{CF5C8FA6-67A3-4284-8DC5-1DE2DC5A5189} = {C52E164A-4673-4E01-A471-02A912E414FA}
 		{7E3F7FC5-3141-4A1D-AC2A-CA5D80EFA7F9} = {42ECA4F4-8AC9-421D-A4CF-6110317043B3}
 		{D67A1400-CE08-4A0E-A416-572A6ED2BCEA} = {42ECA4F4-8AC9-421D-A4CF-6110317043B3}
+		{7ECD81C1-E988-4186-830C-94BB6E259869} = {0E0798FF-3675-4876-BF7B-660BFBCE6E8B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5C549C39-A657-4B92-B2A6-5191880C83C2}

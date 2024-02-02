@@ -1,5 +1,4 @@
 ﻿using DesafioAutoGlass.Application.Dtos;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace DesafioAutoGlass.Application.Interfaces
@@ -14,7 +13,7 @@ namespace DesafioAutoGlass.Application.Interfaces
 
         Task<ProductDto> GetById(int id);
 
-        Task<IEnumerable<ProductDto>> GetAll();
+        Task<PaginationResponseDto<ProductDto>> GetAll(string filter, int page, int pageSize);
 
     }
 }

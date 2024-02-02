@@ -6,6 +6,7 @@ using DesafioAutoGlass.Domain.Core.Interfaces.Services;
 using DesafioAutoGlass.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace DesafioAutoGlass.Application.Services
@@ -66,6 +67,7 @@ namespace DesafioAutoGlass.Application.Services
             {
                 var product = _mapper.Map<Product>(productDto);
                 _productService.Detach(product);
+                product.ChangeStatus();
                 await _productService.Delete(product);
             }
             catch (Exception e)
@@ -74,10 +76,27 @@ namespace DesafioAutoGlass.Application.Services
             }
         }
 
-        public async Task<IEnumerable<ProductDto>> GetAll()
+        public async Task<PaginationResponseDto<ProductDto>> GetAll(string filter, int page, int pageSize)
         {
-            var product = await _productService.GetAll();
-            return _mapper.Map<IEnumerable<ProductDto>>(product);
+            var product = await _productService.GetAll(filter);
+
+            var count = product.Count();
+
+            product = product
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize);
+
+            var totalPages = (int)Math.Abs((double)count / pageSize) + count % pageSize;
+
+            var productDto =  _mapper.Map<List<ProductDto>>(product);
+
+            var response = new PaginationResponseDto<ProductDto>(page,
+                    count,
+                    pageSize,
+                    totalPages == 0 ? 1 : totalPages,
+                    productDto);
+
+            return response;
         }
 
         public async Task<ProductDto> GetById(int id)

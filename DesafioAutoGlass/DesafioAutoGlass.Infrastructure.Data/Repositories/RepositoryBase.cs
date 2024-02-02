@@ -1,9 +1,6 @@
 ﻿using DesafioAutoGlass.Domain.Core.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace DesafioAutoGlass.Infrastructure.Data.Repositories
 {
@@ -17,6 +14,12 @@ namespace DesafioAutoGlass.Infrastructure.Data.Repositories
         {
             _context = db;
             _dbSet = db.Set<TEntity>();
+        }
+
+        public async Task<IEnumerable<TEntity>> Get(Expression<Func<TEntity, bool>> predicate)
+        {
+            return await _dbSet.AsNoTracking().IgnoreQueryFilters().Where(predicate)
+                .ToListAsync();
         }
 
         public async Task Add(TEntity entity)

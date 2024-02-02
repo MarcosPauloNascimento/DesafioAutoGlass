@@ -12,7 +12,9 @@ namespace DesafioAutoGlass.Domain.Core.Interfaces.Services
 
         Task<Product> Get(int id);
 
-        Task<IEnumerable<Product>> GetAll();
+        Task<IEnumerable<Product>> GetAll(string filter);
+
+        Task<IEnumerable<Product>> GetProductsBySupplierId(int id);
 
         void Detach(Product user);
     }

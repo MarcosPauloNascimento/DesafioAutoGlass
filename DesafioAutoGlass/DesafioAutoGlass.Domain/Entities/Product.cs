@@ -32,5 +32,10 @@ namespace DesafioAutoGlass.Domain.Entities
         public int SupplierId { get; set; }
         
         public Supplier Supplier { get; set; }
+
+        public void ChangeStatus()
+        {
+            this.Status = !this.Status;
+        }
     }
 }

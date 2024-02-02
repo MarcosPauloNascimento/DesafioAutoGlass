@@ -3,7 +3,6 @@ using DesafioAutoGlass.Application.AutoMapperProfile;
 using DesafioAutoGlass.Application.Dtos;
 using DesafioAutoGlass.Application.Services;
 using DesafioAutoGlass.Domain.Core.Interfaces.Services;
-using DesafioAutoGlass.Domain.Entities;
 using Moq;
 using Xunit;
 
@@ -25,7 +24,8 @@ namespace DesafioAutoGlass.Tests.Service
 
             _services = new ApplicationSupplierServices(_mapper,
                 new Mock<ISupplierService>().Object,
-                new Mock<INotifier>().Object);
+                new Mock<INotifier>().Object,
+                new Mock<IProductService>().Object);
         }
 
         #region Test Add Supplier

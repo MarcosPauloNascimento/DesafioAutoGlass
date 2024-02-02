@@ -14,12 +14,17 @@ namespace DesafioAutoGlass.Application.Services
     {
         private readonly IMapper _mapper;
         private readonly ISupplierService _supplierService;
+        private readonly IProductService _productService;
 
-        public ApplicationSupplierServices(IMapper mapper, ISupplierService supplierService, INotifier notifier)
+        public ApplicationSupplierServices(IMapper mapper, 
+            ISupplierService supplierService, 
+            INotifier notifier,
+            IProductService productService)
             : base(notifier)
         {
             _mapper = mapper;
             _supplierService = supplierService;
+            _productService = productService;
         }
 
         public async Task<bool> Add(SupplierDto supplierDto)
@@ -84,6 +89,12 @@ namespace DesafioAutoGlass.Application.Services
         {
             var supllier = await _supplierService.Get(id);
             return _mapper.Map<SupplierDto>(supllier);
+        }
+
+        public async Task<IEnumerable<ProductDto>> GetProductsBySuplierId(int id)
+        {
+            var products = await _productService.GetProductsBySupplierId(id);
+            return _mapper.Map<IEnumerable<ProductDto>>(products);
         }
     }
 }
