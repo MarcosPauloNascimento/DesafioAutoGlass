@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -13,6 +13,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DesafioAutoGlass.Application\DesafioAutoGlass.Application.csproj" />
+    <ProjectReference Include="..\DesafioAutoGlass.Domain.Service\DesafioAutoGlass.Domain.Service.csproj" />
+    <ProjectReference Include="..\DesafioAutoGlass.Infrastructure.Data\DesafioAutoGlass.Infrastructure.Data.csproj" />
   </ItemGroup>
 
 </Project>
