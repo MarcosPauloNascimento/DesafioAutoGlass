@@ -26,19 +26,7 @@ namespace DesafioAutoGlass.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-            modelBuilder.Entity<Supplier>()
-                .HasData(
-                    new Supplier { Id = 1, Description = "João Auto Peças", CNPJ = "25669302000188" }
-                );
-
-            modelBuilder.Entity<Product>()
-                .HasData(
-                    new Product { Id = 1, Description = "Parachoque Gol G4", Status = true, ManufacturingDate = DateTime.UtcNow.AddYears(-1), SupplierId = 1 }
-                );
-
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(SqlDbContext).Assembly);
-            
         }
 
     }
