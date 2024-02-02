@@ -20,7 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DesafioAutoGlass.Application\DesafioAutoGlass.Application.csproj" />
     <ProjectReference Include="..\DesafioAutoGlass.Domain.Core\DesafioAutoGlass.Domain.Core.csproj" />
     <ProjectReference Include="..\DesafioAutoGlass.Domain.Service\DesafioAutoGlass.Domain.Service.csproj" />
     <ProjectReference Include="..\DesafioAutoGlass.Domain\DesafioAutoGlass.Domain.csproj" />

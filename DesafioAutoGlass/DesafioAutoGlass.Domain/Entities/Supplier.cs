@@ -1,15 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace DesafioAutoGlass.Domain.Entities
 {
     public class Supplier
     {
-        public Supplier(String description, string cnpj)
+        public Supplier()
+        {
+            
+        }
+        public Supplier(string description, string cnpj)
         { 
-            Description = description;
-            CNPJ = cnpj;
+            this.Description = description;
+            this.CNPJ = cnpj;
         }
 
         [Key]
