@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioAutoGlass.Applicatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioAutoGlass.Domain", "DesafioAutoGlass.Domain\DesafioAutoGlass.Domain.csproj", "{08BA9404-1885-42C4-A5D1-0D78E97413E4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioAutoGlass.Infrastructure.Data", "DesafioAutoGlass.Infrastructure\DesafioAutoGlass.Infrastructure.Data.csproj", "{48C43773-D450-43CF-BC6B-C4D31DEA6EFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioAutoGlass.Infrastructure", "DesafioAutoGlass.Infrastructure\DesafioAutoGlass.Infrastructure.csproj", "{48C43773-D450-43CF-BC6B-C4D31DEA6EFC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioAutoGlass.Domain.Core", "DesafioAutoGlass.Domain.Core\DesafioAutoGlass.Domain.Core.csproj", "{2806F2C2-3DDC-46A4-B5CE-3A8323A29254}"
 EndProject
@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Tests", "0 - Tests", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioAutoGlass.Tests", "DesafioAutoGlass.Tests\DesafioAutoGlass.Tests.csproj", "{CF5C8FA6-67A3-4284-8DC5-1DE2DC5A5189}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioAutoGlass.Infrastructure.CrossCutting", "DesafioAutoGlass.Infrastructure.CrossCutting\DesafioAutoGlass.Infrastructure.CrossCutting.csproj", "{7E3F7FC5-3141-4A1D-AC2A-CA5D80EFA7F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioAutoGlass.Infrastructure.CrossCutting", "DesafioAutoGlass.Infrastructure.CrossCutting\DesafioAutoGlass.Infrastructure.CrossCutting.csproj", "{7E3F7FC5-3141-4A1D-AC2A-CA5D80EFA7F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

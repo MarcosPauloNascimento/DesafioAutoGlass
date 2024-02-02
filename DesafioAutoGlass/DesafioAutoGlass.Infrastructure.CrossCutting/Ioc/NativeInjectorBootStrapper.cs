@@ -5,9 +5,9 @@ using DesafioAutoGlass.Domain.Core.Interfaces.Services;
 using DesafioAutoGlass.Domain.Core.Notifications;
 using DesafioAutoGlass.Domain.Service;
 using DesafioAutoGlass.Infrastructure.Data;
+using DesafioAutoGlass.Infrastructure.Data.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using TesteTecnico.Infrastructure.Data.Repositories;
 
 namespace DesafioAutoGlass.Infrastructure.CrossCutting.Ioc
 {
